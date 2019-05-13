@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>EDIA</title>
+</head>
+<body style="background-color: #ccc">
+    <div class="container">
+        <div class="card align-bottom col-sm-12 col-12 col-md-12 col-lg-12" 
+        style="margin: auto; margin-top: 15%; border-top: 5px solid #696969; box-shadow: 2px 3px 2px 3px #696969">
+            <div class="card-body">
+                <div class="container">
+                    <h1>Cadastro</h1>
+                <form>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <label for="categoria">Categoria:</label>
+                                <select>
+                                    <option value="coordenador">Coordenador</option>
+                                    <option value="professor">Professor</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="row" style="margin-top:20px;">
+                            <div class="col-sm-6">
+                                    <input type="text" name="nome" id="nome" placeholder="Nome" required class="form-control">
+                            </div>
+                            <div class="col-sm-6">
+                                    <input type="text" name="sobrenome" id="sobrenome" placeholder="Sobrenome" required class="form-control">
+                            </div>
+                            
+                        </div>
+                        <div class="row" style="margin-top:10px;">
+                            <div class="col-sm-4">
+                                    <label for="data_nasc"> Data de Nascimento:</label>
+                                    <input type="date" name="data_nasc" id="data_nasc" class="form-control" required>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="cpf">CPF:</label>
+                                <input type="text" name="cpf" id="cpf" title="Não utilize pontos ou hífens." class="form-control" maxlength="11" minlength="11" required> 
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="rg">RG:</label>
+                                <input type="text" name="rg" id="rg" required maxlength="20" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:10px;">
+                            <div class="col-sm-4">
+                                <label for="senha">Senha:</label>
+                                <input id="senha" name="senha" type="password" class="form-control" placeholder="A senha deve conter 4 dígitos." title="A senha deve conter 4 dígitos." minlength="4" maxlength="4" required>
+                            </div>
+                            <div class="row" style="margin-top:32px; margin-left: 60px">
+                                <div class="col-sm-5">
+                                        <button type="submit" class="btn btn-success">Enviar</button>
+                                </div>
+                                <div class="col-sm-2">
+                                        <button type="reset" class="btn btn-danger">Apagar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
