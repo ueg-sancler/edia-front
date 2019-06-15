@@ -1,0 +1,23 @@
+body{
+  background-color: #ccc;
+}
+
+.container {
+  margin: 10% auto;
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  background: white;
+  border-top: 5px solid black;
+  width: 450px;
+  height: auto;
+  box-shadow: 2px 3px 3px 2px #696969;
+}
+form {
+  margin: 30px 30px 30px 30px;
+}
+form h2{
+  text-align: center;
+}
