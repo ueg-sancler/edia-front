@@ -10,7 +10,7 @@ const Form = ({ values, handleChange, handleSubmit }) => (
         </div>
         <div className="col-sm-4">
           <label htmlFor="data_nasc"> Data de Nascimento:</label>
-          <input type="date" name="data_nasc" id="data_nasc" onChange={handleChange} value={values.data_nasc|| ''} className="form-control" required />
+          <input type="date" name="data_nascimento" id="data_nascimento" onChange={handleChange} value={values.data_nascimento|| ''} className="form-control" required />
         </div>
       </div>
       <div className="row" style={{marginTop: '10px'}}>

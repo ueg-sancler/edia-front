@@ -26,12 +26,19 @@ const Login = ({ dispatch, history }) => {
     axios.post('http://127.0.0.1:3333/auth/login', {
       "cpf": loginCPF,
       "senha": loginPassword
+    }).then((res) => {
+      if (!res.data.message) {
+        dispatch(AuthActions.auth(res.data, true))
+        history.push('/user')
+      } else {
+        alert('Usuário já existe')
+      }
     })
-    .then((res) => {
+    /*.then((res) => {
       dispatch(AuthActions.auth(res.data, true))
       history.push('/user')
     })
-    .catch(res => toastr.error('Erro', 'Não está cadastrado'))
+    .catch(res => toastr.error('Erro', 'Não está cadastrado'))*/
   }
 
   const {

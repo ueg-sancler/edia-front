@@ -1,10 +1,10 @@
 import React from 'react'
-import Form from './Form'
+import Form from '../SignUp/Form'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import {toastr} from 'react-redux-toastr'
-import useForm from './../../../utils/useForm'
-import * as AuthActions from '../../../store/actions/auth'
+import useForm from '../../../utils/useForm'
+import Container from '../../Container'
 
 const validate = (values) => {
   const errors = {};
@@ -25,15 +25,15 @@ const validate = (values) => {
   return errors
 }
 
-const SignUp = ({ dispatch, history }) => {
+const SignUpTeacher = ({ dispatch, history }) => {
 
   const submitChange = (values) => {
     axios.post('http://127.0.0.1:3333/auth/register', {
       ...values,
-      coordenador: true
+      coordenador: false
     })
     .then((res) => {
-      dispatch(AuthActions.auth(res.data, true))
+      toastr.success('Sucesso!', 'Professor cadastrado')
       history.push('/user')
     })
   }
@@ -44,18 +44,10 @@ const SignUp = ({ dispatch, history }) => {
     handleSubmit,
   } = useForm(submitChange, validate)
   return (
-    <div className="container">
-      <div className="card align-bottom col-sm-12 col-12 col-md-12 col-lg-12"
-        style={{'margin':'auto', 'borderTop': '5px solid #696969', 'boxShadow': '2px 3px 2px 3px #696969'}}>
-        <div className="card-body">
-          <div>
-            <h1>Cadastro</h1>
-              <Form values={values} handleSubmit={handleSubmit} handleChange={handleChange} />
-          </div>
-        </div>
-      </div>
-    </div>
+    <Container>
+      <Form values={values} handleSubmit={handleSubmit} handleChange={handleChange} />
+    </Container>
   )
 }
 
-export default connect( state => ({ ...state }) )(SignUp);
+export default connect( state => ({ ...state }) )(SignUpTeacher);

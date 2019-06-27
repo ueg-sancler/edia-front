@@ -11,14 +11,14 @@ const User = (user) => (
     <table style={table}>
       <tbody>
         <tr>
-          <th>nome</th>
-          <th>cpf</th>
-          <th>data nascimento</th>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>Profissão</th>
         </tr>
         <tr>
           <td>{user.nome}</td>
           <td>{user.cpf}</td>
-          <td>{user.data_nasc}</td>
+          <td>{user.coordenador ? 'Cordenador' : 'Professor' }</td>
         </tr>
       </tbody>
     </table>
